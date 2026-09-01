@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Plan Lekcji</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:15px;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#6a11cb,#9b5de5,#ff66c4);
+}
+
+.phone{
+    max-width:420px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:15px;
+}
+
+.tabs{
+    display:flex;
+    gap:5px;
+    margin-bottom:15px;
+}
+
+.tab{
+    flex:1;
+    border:none;
+    background:white;
+    color:#6a11cb;
+    padding:10px;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:#6a11cb;
+    color:white;
+}
+
+.day-card{
+    background:white;
+    border-radius:18px;
+    padding:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.day-hidden{
+    display:none;
+}
+
+.day-title{
+    color:#6a11cb;
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.lesson{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.break{
+    text-align:center;
+    padding:6px;
+    margin:6px 0;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.wf{background:#f59e0b;}
+.polski{background:#7c3aed;}
+.mat{background:#c026d3;}
+.fizyka{background:#db2777;}
+.niemiecki{background:#65a30d;}
+.geo{background:#ea580c;}
+.bio{background:#d4a72c;}
+.ang{background:#f97316;}
+.chem{background:#2563eb;}
+.hist{background:#1e40af;}
+.inf{background:#dc2626;}
+.zdrowie{background:#e11d48;}
+.muz{background:#fb923c;}
+.pla{background:#d97706;}
+.rel{background:#ec4899;}
+.wych{background:#ef4444;}
+
+.break5{
+    background:#dbeafe;
+    color:#1e40af;
+}
+
+.break10{
+    background:#ede9fe;
+    color:#6d28d9;
+}
+
+.break20{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+</style>
+</head>
+<body>
+
+<div class="phone">
+
+<h1>📚 PLAN LEKCJI</h1>
+
+<div class="tabs">
+
+<button class="tab active"
+onclick="showDay('pon',this)">Pon</button>
+
+<button class="tab"
+onclick="showDay('wt',this)">Wt</button>
+
+<button class="tab"
+onclick="showDay('sr',this)">Śr</button>
+
+<button class="tab"
+onclick="showDay('czw',this)">Czw</button>
+
+<button class="tab"
+onclick="showDay('pt',this)">Pt</button>
+
+</div>
+
+<div id="pon" class="day-card">
+
+<div class="day-title">Poniedziałek</div>
+
+<div class="lesson wf"><span>⚽ WF</span><span>08:00-08:45</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson wf"><span>⚽ WF</span><span>08:50-09:35</span></div>
+<div class="break break10">🟣 Przerwa 10 min</div>
+
+<div class="lesson mat"><span>➗ Matematyka</span><span>09:45-10:30</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>10:35-11:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson ang"><span>🇬🇧 Angielski</span><span>11:25-12:10</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson geo"><span>🌍 Geografia</span><span>12:30-13:15</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson zdrowie"><span>❤️ Zdrowotna</span><span>13:35-14:20</span></div>
+
+</div>
+
+<div id="wt" class="day-card day-hidden">
+
+<div class="day-title">Wtorek</div>
+
+<div class="lesson mat"><span>➗ Matematyka</span><span>08:50-09:35</span></div>
+<div class="break break10">🟣 Przerwa 10 min</div>
+
+<div class="lesson fizyka"><span>⚛️ Fizyka</span><span>09:45-10:30</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson ang"><span>🇬🇧 Angielski</span><span>10:35-11:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>11:25-12:10</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson hist"><span>🏛️ Historia</span><span>12:30-13:15</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson bio"><span>🧬 Biologia</span><span>13:35-14:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson pla"><span>🎨 Plastyka</span><span>14:25-15:10</span></div>
+
+</div>
+
+<div id="sr" class="day-card day-hidden">
+
+<div class="day-title">Środa</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>08:00-08:45</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>08:50-09:35</span></div>
+<div class="break break10">🟣 Przerwa 10 min</div>
+
+<div class="lesson niemiecki"><span>🇩🇪 Niemiecki</span><span>09:45-10:30</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson fizyka"><span>⚛️ Fizyka</span><span>10:35-11:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson hist"><span>🏛️ Historia</span><span>11:25-12:10</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson mat"><span>➗ Matematyka</span><span>12:30-13:15</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson inf"><span>💻 Informatyka</span><span>13:35-14:20</span></div>
+
+</div>
+
+<div id="czw" class="day-card day-hidden">
+
+<div class="day-title">Czwartek</div>
+
+<div class="lesson wf"><span>⚽ WF</span><span>08:00-08:45</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson wf"><span>⚽ WF</span><span>08:50-09:35</span></div>
+<div class="break break10">🟣 Przerwa 10 min</div>
+
+<div class="lesson geo"><span>🌍 Geografia</span><span>09:45-10:30</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson mat"><span>➗ Matematyka</span><span>10:35-11:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson chem"><span>🧪 Chemia</span><span>11:25-12:10</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson ang"><span>🇬🇧 Angielski</span><span>12:30-13:15</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>13:35-14:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson rel"><span>✝️ Religia</span><span>14:25-15:10</span></div>
+
+</div>
+
+<div id="pt" class="day-card day-hidden">
+
+<div class="day-title">Piątek</div>
+
+<div class="lesson mat"><span>➗ Matematyka</span><span>08:00-08:45</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson polski"><span>📖 Polski</span><span>08:50-09:35</span></div>
+<div class="break break10">🟣 Przerwa 10 min</div>
+
+<div class="lesson bio"><span>🧬 Biologia</span><span>09:45-10:30</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson chem"><span>🧪 Chemia</span><span>10:35-11:20</span></div>
+<div class="break break5">🔹 Przerwa 5 min</div>
+
+<div class="lesson niemiecki"><span>🇩🇪 Niemiecki</span><span>11:25-12:10</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson wych"><span>👥 Wychowawcza</span><span>12:30-13:15</span></div>
+<div class="break break20">🟡 Przerwa 20 min</div>
+
+<div class="lesson muz"><span>🎵 Muzyka</span><span>13:35-14:20</span></div>
+
+</div>
+
+<script>
+
+function showDay(day, btn){
+
+    document
+        .querySelectorAll('.day-card')
+        .forEach(card=>{
+            card.style.display='none';
+        });
+
+    document
+        .getElementById(day)
+        .style.display='block';
+
+    document
+        .querySelectorAll('.tab')
+        .forEach(tab=>{
+            tab.classList.remove('active');
+        });
+
+    btn.classList.add('active');
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
